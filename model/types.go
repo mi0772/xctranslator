@@ -20,14 +20,14 @@ type StringUnit struct {
 	State string `json:"state"`
 	Value string `json:"value"`
 }
-type TranslationContent struct {
+type TranslationContext struct {
 	mu                sync.Mutex
 	SourceLanguage    string
 	SourceStrings     []StringEntry
 	translatedStrings map[string][]StringEntry
 }
 
-func (t *TranslationContent) AddTranslatedString(lang string, entry StringEntry) {
+func (t *TranslationContext) AddTranslatedString(lang string, entry StringEntry) {
 	t.mu.Lock()
 	defer t.mu.Unlock()
 
@@ -42,7 +42,7 @@ func (t *TranslationContent) AddTranslatedString(lang string, entry StringEntry)
 	t.translatedStrings[lang] = append(t.translatedStrings[lang], entry)
 }
 
-func (t *TranslationContent) GetTranslatedStrings() map[string][]StringEntry {
+func (t *TranslationContext) GetTranslatedStrings() map[string][]StringEntry {
 	t.mu.Lock()
 	defer t.mu.Unlock()
 

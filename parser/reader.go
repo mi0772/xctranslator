@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func ReadSourceStrings(filePath string) (*model.TranslationContent, *model.XCStrings, error) {
+func ReadSourceStrings(filePath string) (*model.TranslationContext, *model.XCStrings, error) {
 	var identifier int64
 
 	data, err := os.ReadFile(filePath)
@@ -27,7 +27,7 @@ func ReadSourceStrings(filePath string) (*model.TranslationContent, *model.XCStr
 		sourceStrings = append(sourceStrings, model.StringEntry{Identifier: identifier, Content: key})
 	}
 
-	return &model.TranslationContent{
+	return &model.TranslationContext{
 		SourceLanguage: xc.SourceLanguage,
 		SourceStrings:  sourceStrings,
 	}, &xc, nil

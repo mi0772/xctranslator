@@ -13,7 +13,7 @@ import (
 
 var mu sync.Mutex
 
-func Transalate(fileContent *model.TranslationContent, targetLang string, wg *sync.WaitGroup) error {
+func Transalate(fileContent *model.TranslationContext, targetLang string, wg *sync.WaitGroup) error {
 	defer wg.Done()
 	bar := progressbar.Default(int64(len(fileContent.SourceStrings)))
 	bar.Describe(fmt.Sprintf("translate in %s", targetLang))

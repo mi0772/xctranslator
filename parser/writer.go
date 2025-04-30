@@ -19,7 +19,7 @@ func WriteFile(filePath string, xcStrings model.XCStrings) error {
 	return nil
 }
 
-func BuildFinalXCStringFile(sourceXCString *model.XCStrings, fileContent *model.TranslationContent) (model.XCStrings, error) {
+func BuildFinalXCStringFile(sourceXCString *model.XCStrings, fileContent *model.TranslationContext) (model.XCStrings, error) {
 	var output model.XCStrings
 
 	output.SourceLanguage = sourceXCString.SourceLanguage

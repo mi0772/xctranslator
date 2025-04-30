@@ -1,0 +1,18 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Fourth %lld line" : {
+
+    },
+    "Hello, world!" : {
+
+    },
+    "Second line" : {
+
+    },
+    "Third line" : {
+
+    }
+  },
+  "version" : "1.0"
+}
